@@ -1,0 +1,14 @@
+@import "shared/assets/help-styles/variables.scss";
+
+@font-face {
+	font-family: "Roboto-Medium";
+	src: local("Roboto-Medium"), url($fontsPath + "Roboto-Medium.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Roboto-Regular";
+	src: local("Roboto-Regular"), url($fontsPath + "Roboto-Regular.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Roboto-Bold";
+	src: local("Roboto-Bold"), url($fontsPath + "Roboto-Bold.woff2") format("woff2");
+}

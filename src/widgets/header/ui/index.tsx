@@ -6,7 +6,10 @@ const Header: FC = () => {
   console.log(3);
   return (
     <div className={cx(styles.header)}>
-      Header
+      <div className={cx(styles.container)}>
+        <span className={cx(styles.back)}> Cancel</span>
+        Restaurant
+      </div>
     </div>
   );
 };
