@@ -48,7 +48,8 @@
             }
         ],
         "react/react-in-jsx-scope": "off",
-        "import/no-unresolved": "off"
+        "import/no-unresolved": "off",
+        "import/prefer-default-export": "off"
     },
     "settings": {
         "import/resolver": {
