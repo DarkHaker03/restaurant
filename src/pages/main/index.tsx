@@ -1,9 +1,9 @@
 import { FC } from 'react';
 
 const Main: FC = () => (
-	<div>
-		3
-	</div>
+  <div>
+    main
+  </div>
 );
 
 export default Main;

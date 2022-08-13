@@ -39,8 +39,16 @@
             "error",
             "windows"
         ],
-        "import/extensions": 0,
-        "react/react-in-jsx-scope": "off"
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "tsx": "never",
+                "ts": "never"
+            }
+        ],
+        "react/react-in-jsx-scope": "off",
+        "import/no-unresolved": "off"
     },
     "settings": {
         "import/resolver": {
@@ -48,10 +56,6 @@
                 "extensions": [
                     ".ts",
                     ".tsx"
-                ],
-                "moduleDirectory": [
-                    "node_modules",
-                    "./src"
                 ]
             }
         }
