@@ -1,0 +1,17 @@
+.button {
+	display: flex;
+	margin: 0 18px 0 16px;
+	flex-direction: column;
+	span {
+		width: 16px;
+		height: 2px;
+		border-radius: 2px;
+		background-color: #3f8ae0;
+	}
+	span:first-child {
+		transform: rotate(45deg) translateY(1px);
+	}
+	span:last-child {
+		transform: rotate(-45deg) translateY(-2px);
+	}
+}
