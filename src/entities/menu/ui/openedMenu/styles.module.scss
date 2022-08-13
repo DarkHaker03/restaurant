@@ -1,0 +1,72 @@
+@import "shared/assets/help-styles/variables.scss";
+
+.openedMenu {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-color: #ccc;
+	left: 0;
+	top: 80px;
+	border-radius: 10px 10px 0px 0px;
+}
+.button {
+	display: flex;
+	margin: 0 18px 0 16px;
+	flex-direction: column;
+	span {
+		width: 16px;
+		height: 2px;
+		border-radius: 2px;
+		background-color: #3f8ae0;
+	}
+	span:first-child {
+		transform: rotate(45deg) translateY(1px);
+	}
+	span:last-child {
+		transform: rotate(-45deg) translateY(-2px);
+	}
+}
+.top-row {
+	margin: 18px 0;
+	display: flex;
+	align-items: center;
+	font-family: $font-1;
+	font-size: 20px;
+}
+.item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px 12px 12px 18px;
+	font-size: 16px;
+	line-height: 24px;
+	border-top: solid 1px #e8e8e8;
+	input {
+		margin: 0;
+	}
+}
+.open-anim {
+	animation: open 0.5s;
+}
+
+.close-anim {
+	animation: close 0.5s;
+}
+
+@keyframes open {
+	0% {
+		top: 100%;
+	}
+	100% {
+		top: 80px;
+	}
+}
+
+@keyframes close {
+	0% {
+		top: 80px;
+	}
+	100% {
+		top: 100%;
+	}
+}

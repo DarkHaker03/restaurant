@@ -1,0 +1,47 @@
+@import "shared/assets/help-styles/variables.scss";
+.menu {
+	display: flex;
+	align-items: center;
+}
+.button {
+	display: flex;
+	margin-right: 15px;
+	flex-direction: column;
+	span {
+		width: 12px;
+		margin: 1px 0;
+		height: 2px;
+		border-radius: 2px;
+		background-color: #99a2ad;
+	}
+}
+.scroll-elemnt {
+	display: flex;
+	position: relative;
+	width: 100%;
+	overflow: -moz-scrollbars-none;
+	-ms-overflow-style: none;
+	overflow-x: scroll;
+	div {
+		position: relative;
+		color: #6d7885;
+		font-size: 14px;
+		line-height: 14px;
+		margin: 10px 15px;
+		font-family: $font-1;
+	}
+}
+.scroll-elemnt::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+}
+
+.selected-elemnt {
+	height: 2px;
+	background-color: #3f8ae0;
+	border-radius: 7px;
+	width: calc(100% + 30px);
+	position: absolute;
+	left: -15px;
+	bottom: -10px;
+}

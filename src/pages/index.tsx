@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Route, Routes } from 'react-router';
+import { Container } from 'shared/container';
 import { Header } from 'widgets/header';
 
 const Basket = React.lazy(() => import('./basket'));
@@ -11,13 +12,15 @@ const Main = React.lazy(() => import('./main'));
 const Pages: FC = () => (
   <>
     <Header />
-    <Routes>
-      <Route path="/" element={<Main />} />
-      <Route path="/menu-food" element={<MenuOfFoof />} />
-      <Route path="/basket" element={<Basket />} />
-      <Route path="/food-detail-supplement" element={<FoodDetailSupplement />} />
-      <Route path="/food-detail" element={<FoodDetail />} />
-    </Routes>
+    <Container>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/menu-food" element={<MenuOfFoof />} />
+        <Route path="/basket" element={<Basket />} />
+        <Route path="/food-detail-supplement" element={<FoodDetailSupplement />} />
+        <Route path="/food-detail" element={<FoodDetail />} />
+      </Routes>
+    </Container>
   </>
 );
 
