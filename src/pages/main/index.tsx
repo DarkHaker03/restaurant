@@ -6,7 +6,7 @@ const Main: FC = () => {
   return (
     <>
       <Menu />
-      Популярные
+      <div>3</div>
     </>
   );
 };
