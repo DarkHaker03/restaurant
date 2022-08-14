@@ -1,8 +1,9 @@
 import { FC } from 'react';
 import cx from 'clsx';
 import { useUnit } from 'effector-react';
+import { mainModel } from 'pages/main';
+import { MenuKeys } from 'pages/main/model';
 import check from 'shared/assets/img/check.svg';
-import { $selectedId } from 'entities/menu/model';
 import { menuModel } from '../..';
 import styles from './styles.module.scss';
 
@@ -11,36 +12,36 @@ type ItemsArrayProps = {
 }
 
 type ItemProps = {
-  id: number,
-  name: string,
-  selectedId: number
+  item: MenuKeys
+  selectedItem: MenuKeys
 }
 
-const Item: FC<ItemProps> = ({ id, name, selectedId }) => (
-  <div key={id} onClick={() => menuModel.setSelectedId(id)}>
-    {name}
-    {id === selectedId ? <span className={cx(styles['selected-element'])} /> : null}
+const Item: FC<ItemProps> = ({ item, selectedItem }) => (
+  <div key={item.id} onClick={() => menuModel.setSelectedItem(item)}>
+    {item.name}
+    {item.id === selectedItem.id ? <span className={cx(styles['selected-element'])} /> : null}
   </div>
 );
 
-const ItemOfOpenedMenu: FC<ItemProps> = ({ id, name, selectedId }) => (
-  <div key={id} className={cx(styles.item)} onClick={() => menuModel.setSelectedId(id)}>
+const ItemOfOpenedMenu: FC<ItemProps> = ({ item, selectedItem }) => (
+  <div key={item.id} className={cx(styles.item)} onClick={() => menuModel.setSelectedItem(item)}>
     <span>
-      {name}
+      {item.name}
     </span>
-    {id === selectedId ? <img src={check} alt="check" /> : null}
+    {item.id === selectedItem.id ? <img src={check} alt="check" /> : null}
   </div>
 );
 
 const ItemsArray: FC<ItemsArrayProps> = ({ version }) => {
-  const selectedId = useUnit($selectedId);
+  const selectedItem = useUnit(menuModel.$selectedItem);
+  const menu = useUnit(mainModel.$menu);
   return (
     <div className={cx(version === 'openedMenu' ? null : styles['scroll-element'])}>
-      {menuModel.ARRAY_OF_MENU.map(({ name, id }) => {
+      {menu.map((item) => {
         if (version === 'openedMenu') {
-          return <ItemOfOpenedMenu id={id} selectedId={selectedId} name={name} />;
+          return <ItemOfOpenedMenu item={item} selectedItem={selectedItem} />;
         }
-        return <Item id={id} selectedId={selectedId} name={name} />;
+        return <Item item={item} selectedItem={selectedItem} />;
       })}
     </div>
   );

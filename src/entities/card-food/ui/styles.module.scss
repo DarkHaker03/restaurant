@@ -1,0 +1,61 @@
+@import "shared/assets/help-styles/variables.scss";
+
+.card-food {
+	margin-bottom: 26px;
+	border-radius: 4px;
+	max-width: 48.7%;
+	img {
+		border-radius: 4px 4px 0 0;
+		width: 100%;
+	}
+}
+.border-bottom {
+	border-bottom: solid 3px #3f8ae0;
+}
+.name {
+	margin: 8px 0 4px 12px;
+	font-size: 15px;
+	font-family: $font-1;
+	line-height: 18px;
+	color: #292929;
+}
+.weight {
+	color: rgba(0, 0, 0, 0.54);
+	margin: 0 0 32px 12px;
+	font-size: 12px;
+	line-height: 16px;
+}
+.price {
+	margin: 0 12px;
+	background-color: #f2f3f5;
+	color: #424950;
+	font-size: 16px;
+	line-height: 18px;
+	padding: 9px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.priceClicked {
+	color: #424950;
+	font-size: 16px;
+	line-height: 18px;
+	padding: 9px 0;
+	border-radius: 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.counterBtn {
+	width: 36px;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #f2f3f5;
+	border-radius: 4px;
+	color: #424950;
+}
+.counter {
+	margin: 0 30px;
+}

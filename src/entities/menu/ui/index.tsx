@@ -8,11 +8,9 @@ import OpenedMenu from './openedMenu';
 import styles from './styles.module.scss';
 
 const Menu: FC = () => {
-  const selectedItem = menuModel.ARRAY_OF_MENU.map(
-    ({ id, name }) => (useUnit(menuModel.$selectedId) === id ? name : null),
-  );
-
+  const selectedItem = useUnit(menuModel.$selectedItem);
   const [isOpenMenuConfirm, setIsOpenMenuConfirm] = useState<boolean>(false);
+
   return (
     <>
       <div className={cx(styles.menu)}>
@@ -21,7 +19,7 @@ const Menu: FC = () => {
         {isOpenMenuConfirm ? <OpenedMenu onClick={setIsOpenMenuConfirm} /> : null}
       </div>
       <div className={styles.selectedItem}>
-        {selectedItem}
+        {selectedItem.name}
       </div>
     </>
   );

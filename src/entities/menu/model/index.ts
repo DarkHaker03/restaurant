@@ -1,17 +1,10 @@
 import { createEvent, restore } from 'effector';
+import { $menu, MenuKeys } from 'pages/main/model';
 
-const ARRAY_OF_MENU = [
-  { name: 'FEWFWEFWEF0', id: 0 },
-  { name: 'FEWFWEFWEF1', id: 1 },
-  { name: 'FEWFWEFWEF2', id: 2 },
-  { name: 'FEWFWEFWEF3', id: 3 },
-  { name: 'FEWFWEFWEF4', id: 4 },
-  { name: 'FEWFWEFWEF5', id: 5 },
-  { name: 'FEWFWEFWEF6', id: 6 },
-];
+const firstItem = $menu.getState()[0];
 
-const setSelectedId = createEvent<number>();
+const setSelectedItem = createEvent<MenuKeys>();
 
-const $selectedId = restore(setSelectedId, 0);
+const $selectedItem = restore(setSelectedItem, firstItem);
 
-export { ARRAY_OF_MENU, $selectedId, setSelectedId };
+export { $selectedItem, setSelectedItem };
