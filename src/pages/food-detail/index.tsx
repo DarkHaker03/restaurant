@@ -1,8 +1,13 @@
-import { FC } from 'react';
+import { lowerBarModel } from 'entities/lower-bar';
+import { FC, useEffect } from 'react';
 
 const FoodDetail: FC = () => {
-  console.log(3);
-
+  const { setLink, setText, setIsOpen } = lowerBarModel;
+  useEffect(() => {
+    setIsOpen(true);
+    setLink('/basket');
+    setText('Добавить к заказу | 349 ₽');
+  }, []);
   return (
     <div>
       FoodDetail
