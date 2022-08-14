@@ -1,15 +1,18 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
+import { useUnit } from 'effector-react';
 import cx from 'clsx';
-import { ItemOfProductsKeys } from 'pages/main/model';
+import { setCounter } from 'pages/main/model';
+import { mainModel } from 'pages/main';
 import styles from './styles.module.scss';
 
-const CardFood: FC<ItemOfProductsKeys> = ({
+const CardFood: FC<mainModel.ItemOfProductsKeys> = ({
   id, image, name, price, weight,
 }) => {
-  const [isClickedOnPrice, setIsClickedOnPrice] = useState(false);
-  const [counter, setCounter] = useState(0);
+  const { $idOfClickedCardFood, $counter } = mainModel;
+  const [idOfClickedCardFood, counter] = useUnit([$idOfClickedCardFood, $counter]);
+  const isClickedOnPrice = idOfClickedCardFood === id;
   const handleClick = () => {
-    counter !== 0 ? setCounter(counter - 1) : setIsClickedOnPrice(false);
+    counter !== 1 ? setCounter(counter - 1) : mainModel.setIdOfClickedCardFood(0);
   };
   return (
     <div key={id} className={cx(styles['card-food'], isClickedOnPrice && styles['border-bottom'])}>
@@ -25,7 +28,7 @@ const CardFood: FC<ItemOfProductsKeys> = ({
               <div onClick={() => setCounter(counter + 1)} className={styles.counterBtn}>+</div>
             </div>
           )
-          : <div className={styles.price} onClick={() => setIsClickedOnPrice(true)}>{`${price} ₽`}</div>
+          : <div className={styles.price} onClick={() => mainModel.setIdOfClickedCardFood(id)}>{`${price} ₽`}</div>
       }
     </div>
   );
