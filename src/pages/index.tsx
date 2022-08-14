@@ -9,7 +9,6 @@ import { Loading } from 'shared/loading';
 const Basket = React.lazy(() => import('./basket'));
 const FoodDetail = React.lazy(() => import('./food-detail'));
 const FoodDetailSupplement = React.lazy(() => import('./food-detail-supplement'));
-const MenuOfFoof = React.lazy(() => import('./food-menu'));
 // const Main = React.lazy(() => import('./main/ui'));
 
 const Pages: FC = () => (
@@ -18,7 +17,6 @@ const Pages: FC = () => (
     <Container>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/menu-food" element={<Suspense fallback={<Loading />}><MenuOfFoof /></Suspense>} />
         <Route path="/basket" element={<Suspense fallback={<Loading />}><Basket /></Suspense>} />
         <Route path="/food-detail-supplement" element={<Suspense fallback={<Loading />}><FoodDetailSupplement /></Suspense>} />
         <Route path="/food-detail" element={<Suspense fallback={<Loading />}><FoodDetail /></Suspense>} />
