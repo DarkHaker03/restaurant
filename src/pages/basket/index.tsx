@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react';
 import { lowerBarModel } from 'entities/lower-bar';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useUnit } from 'effector-react';
 import img from 'shared/assets/img/basket.svg';
 import { BasketCard } from 'entities/basket-card';
@@ -8,6 +8,7 @@ import { $basket, setBasket } from './model';
 import styles from './styles.module.scss';
 
 const Basket: FC = () => {
+  const navigate = useNavigate();
   const { setLink, setText, setIsOpen } = lowerBarModel;
   const basket = useUnit($basket);
   const sumPrice = basket.reduce((sum, item) => {
@@ -19,7 +20,11 @@ const Basket: FC = () => {
     setText(`Заказать | ${sumPrice} ₽`);
   }, []);
   useEffect(() => {
-    setText(`Заказать | ${sumPrice} ₽`);
+    if (sumPrice !== 0) {
+      setText(`Заказать | ${sumPrice} ₽`);
+    } else {
+      navigate('/');
+    }
   }, [basket]);
   return (
     <div style={{ padding: '16px' }}>
