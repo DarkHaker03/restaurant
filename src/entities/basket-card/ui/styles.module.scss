@@ -1,0 +1,28 @@
+@import "shared/assets/help-styles/variables.scss";
+
+.img {
+	width: 64px;
+	border-radius: 4px;
+	height: 64px;
+	margin-right: 12px;
+}
+.top-row {
+	color: rgba(0, 0, 0, 0.87);
+	font-family: $font-1;
+	display: flex;
+	justify-content: space-between;
+}
+.container {
+	width: 100%;
+}
+.item-of-backet {
+	display: flex;
+	border-bottom: solid 1px #e8e8e8;
+	padding: 16px 0;
+}
+.price {
+	font-size: 14px;
+}
+.name {
+	font-size: 12px;
+}

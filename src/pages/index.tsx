@@ -17,9 +17,9 @@ const Pages: FC = () => (
     <Container>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/basket" element={<Suspense fallback={<Loading />}><Basket /></Suspense>} />
         <Route path="/food-detail-supplement" element={<Suspense fallback={<Loading />}><FoodDetailSupplement /></Suspense>} />
         <Route path="/food-detail" element={<Suspense fallback={<Loading />}><FoodDetail /></Suspense>} />
+        <Route path="/basket" element={<Suspense fallback={<Loading />}><Basket /></Suspense>} />
       </Routes>
     </Container>
     <LowerBar />

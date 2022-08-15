@@ -7,14 +7,15 @@ type Props = {
   counter: number,
   rightBtn: any,
   supplementStyles?: CSS.Properties,
+  supplementStylesOfCounter?: CSS.Properties,
 };
 
 const Counter: FC<Props> = ({
-  leftBtn, counter, rightBtn, supplementStyles,
+  leftBtn, counter, rightBtn, supplementStyles, supplementStylesOfCounter,
 }) => (
   <div className={styles.counter} style={supplementStyles}>
     <div onClick={leftBtn} className={styles.counterBtn}>-</div>
-    <div className={styles.number}>{counter}</div>
+    <div style={supplementStylesOfCounter} className={styles.number}>{counter}</div>
     <div onClick={rightBtn} className={styles.counterBtn}>+</div>
   </div>
 );

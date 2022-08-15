@@ -1,18 +1,13 @@
-.item-of-backet {
-	display: flex;
-	border-bottom: solid 1px #000;
-	padding: 16px;
+@import "shared/assets/help-styles/variables.scss";
+
+.basket {
+	font-size: 20px;
+	font-family: $font-1;
+	color: rgba(0, 0, 0, 0.87);
+	line-height: 23px;
 }
-.img {
-	width: 64px;
-	border-radius: 4px;
-	height: 64px;
-	margin-right: 12px;
-}
-.top-row {
+.basket-row {
 	display: flex;
 	justify-content: space-between;
-}
-.container {
-	width: 100%;
+	margin-bottom: 16x;
 }
