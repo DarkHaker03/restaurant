@@ -3,9 +3,9 @@ import { FC } from 'react';
 import styles from './styles.module.scss';
 
 type Props = {
-  leftBtn: () => void,
+  leftBtn: any,
   counter: number,
-  rightBtn: () => void,
+  rightBtn: any,
   supplementStyles?: CSS.Properties,
 };
 

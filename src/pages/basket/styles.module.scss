@@ -1,0 +1,18 @@
+.item-of-backet {
+	display: flex;
+	border-bottom: solid 1px #000;
+	padding: 16px;
+}
+.img {
+	width: 64px;
+	border-radius: 4px;
+	height: 64px;
+	margin-right: 12px;
+}
+.top-row {
+	display: flex;
+	justify-content: space-between;
+}
+.container {
+	width: 100%;
+}
