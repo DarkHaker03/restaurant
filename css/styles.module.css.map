@@ -1,9 +1,8 @@
 {
     "version": 3,
-    "mappings": "AAEA,AAAA,OAAO,CAAC;EACP,SAAS,EAAE,IAAI;EACf,WAAW,ECFH,eAAe;EDGvB,KAAK,EAAE,mBAAmB;EAC1B,WAAW,EAAE,IAAI;CACjB;;AACD,AAAA,WAAW,CAAC;EACX,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,gBAAgB;CACzB",
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACb,OAAO,EAAE,mBAAmB;EAC5B,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,aAAa,EAAE,iBAAiB;CAChC;;AACD,AAAA,WAAW,CAAC;EACX,gBAAgB,EAAE,OAAO;CACzB",
     "sources": [
-        "../src/pages/basket/styles.module.scss",
-        "../src/shared/assets/help-styles/variables.scss"
+        "../src/pages/food-detail-supplement/active-items/styles.module.scss"
     ],
     "names": [],
     "file": "styles.module.css"

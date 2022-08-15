@@ -2,10 +2,12 @@ import { FC, useEffect, useState } from 'react';
 import { lowerBarModel } from 'entities/lower-bar';
 import { INGREDIEENTS } from 'pages/food-detail';
 import styles from './styles.module.scss';
+import ActiveItems from './active-items';
 
 const FoodDetailSupplement: FC = () => {
   const { setLink, setText, setIsOpen } = lowerBarModel;
   const [active, setActive] = useState(INGREDIEENTS[0]);
+  const [activeItems, setActiveItem] = useState<string[]>([]);
   useEffect(() => {
     setIsOpen(true);
     setLink('/food-detail');
@@ -26,11 +28,14 @@ const FoodDetailSupplement: FC = () => {
         ))}
       </div>
       <div>
-        {active.items.map(({ name, price }) => (
-          <div>
-            <span>{name}</span>
-            <span>{price}</span>
-          </div>
+        {active.items.map((item) => (
+          <ActiveItems
+            key={item.name}
+            item={item}
+            active={active}
+            activeItems={activeItems}
+            setActiveItem={setActiveItem}
+          />
         ))}
       </div>
     </>

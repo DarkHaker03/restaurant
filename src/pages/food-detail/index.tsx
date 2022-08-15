@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom';
 import { Counter } from 'shared/counter';
 import styles from './styles.module.scss';
 
-type ItemsOfArguments = {
+export type ItemsOfArguments = {
   name: string,
   price: number
 }
 
-type IngridiensArguments = {
+export type IngridiensArguments = {
   type: string,
   items: ItemsOfArguments[]
 }
@@ -23,34 +23,32 @@ export const INGREDIEENTS: IngridiensArguments[] = [
       { name: 'Гречневая', price: 0 },
       { name: 'Гречневая1', price: 0 },
       { name: 'Гречневая2', price: 0 },
-      { name: 'Гречневая3', price: 0 },
     ],
   },
   {
     type: 'Вид лапши1',
     items: [
-      { name: 'Гречневая', price: 0 },
-      { name: 'Гречневая3', price: 0 },
-      { name: 'Гречневая2', price: 0 },
-      { name: 'Гречневая3', price: 0 },
+      { name: '2Гречневая', price: 0 },
+      { name: '2Гречневая3', price: 0 },
+      { name: '2Гречневая2', price: 0 },
     ],
   },
   {
     type: 'Вид лапши2',
     items: [
-      { name: 'Гречневая', price: 0 },
-      { name: 'Гречневая4', price: 0 },
-      { name: 'Гречневая2', price: 0 },
-      { name: 'Гречневая3', price: 0 },
+      { name: '3Гречневая', price: 0 },
+      { name: '3Гречневая4', price: 0 },
+      { name: '3Гречневая2', price: 0 },
+      { name: '3Гречневая3', price: 0 },
     ],
   },
   {
     type: 'Вид лапши3',
     items: [
-      { name: 'Гречневая', price: 0 },
-      { name: 'Гречневая5', price: 0 },
-      { name: 'Гречневая2', price: 0 },
-      { name: 'Гречневая3', price: 0 },
+      { name: '4Гречневая', price: 0 },
+      { name: '4Гречневая5', price: 0 },
+      { name: '4Гречневая2', price: 0 },
+      { name: '4Гречневая3', price: 0 },
     ],
   },
 ];
