@@ -36,7 +36,7 @@ const Basket: FC = () => {
       </div>
       <div>
         {basket.map((item) => (
-          <BasketCard item={item} />
+          <BasketCard item={item} key={item.id} />
         ))}
       </div>
     </div>

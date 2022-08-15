@@ -20,7 +20,7 @@ const CardFood: FC<selectedFoodModel.ItemOfProductsKeys> = (item) => {
     rightBtn: () => setCounter(counter + 1),
   };
   return (
-    <div key={id} className={cx(styles['card-food'], isClickedOnPrice && styles['border-bottom'])}>
+    <div className={cx(styles['card-food'], isClickedOnPrice && styles['border-bottom'])}>
       <img src={image} alt={`name: ${name} ,price: ${price}`} />
       <div className={styles.name}>{name}</div>
       <div className={styles.weight}>{`${weight} г`}</div>

@@ -17,14 +17,14 @@ type ItemProps = {
 }
 
 const Item: FC<ItemProps> = ({ item, selectedItem }) => (
-  <div key={item.id} onClick={() => menuModel.setSelectedItem(item)}>
+  <div onClick={() => menuModel.setSelectedItem(item)}>
     {item.name}
     {item.id === selectedItem.id ? <span className={cx(styles['selected-element'])} /> : null}
   </div>
 );
 
 const ItemOfOpenedMenu: FC<ItemProps> = ({ item, selectedItem }) => (
-  <div key={item.id} className={cx(styles.item)} onClick={() => menuModel.setSelectedItem(item)}>
+  <div className={cx(styles.item)} onClick={() => menuModel.setSelectedItem(item)}>
     <span>
       {item.name}
     </span>
@@ -39,9 +39,9 @@ const ItemsArray: FC<ItemsArrayProps> = ({ version }) => {
     <div className={cx(version === 'openedMenu' ? null : styles['scroll-element'])}>
       {menu.map((item) => {
         if (version === 'openedMenu') {
-          return <ItemOfOpenedMenu item={item} selectedItem={selectedItem} />;
+          return <ItemOfOpenedMenu key={item.id} item={item} selectedItem={selectedItem} />;
         }
-        return <Item item={item} selectedItem={selectedItem} />;
+        return <Item key={item.id} item={item} selectedItem={selectedItem} />;
       })}
     </div>
   );

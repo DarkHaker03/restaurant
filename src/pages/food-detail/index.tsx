@@ -44,7 +44,7 @@ const FoodDetail: FC = () => {
           <div>
             <div className={styles.h4}>Выберите состав </div>
             {INGREDIEENTS.map((word) => (
-              <div className={styles.supplementWord}>
+              <div className={styles.supplementWord} key={word}>
                 {word}
                 <Link className={styles.supplementBtn} to="/food-detail-supplement">Выбрать</Link>
               </div>

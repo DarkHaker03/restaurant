@@ -6,7 +6,7 @@ const Products = () => {
   const { products } = useUnit(menuModel.$selectedItem);
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-      { products.map((item) => <CardFood {...item} />)}
+      { products.map((item) => <CardFood {...item} key={item.id} />)}
     </div>
   );
 };
