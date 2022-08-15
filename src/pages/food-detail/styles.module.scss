@@ -1,0 +1,37 @@
+@import "shared/assets/help-styles/variables.scss";
+.name {
+	font-size: 24px;
+	color: rgba(0, 0, 0, 0.87);
+}
+.description {
+	color: #818c99;
+	font-size: 14px;
+	line-height: 20px;
+	margin-bottom: 12px;
+}
+.h4 {
+	font-size: 20px;
+	color: rgba(0, 0, 0, 0.87);
+	font-family: $font-1;
+	margin-bottom: 10px;
+}
+.supplementWord {
+	padding: 12px 0 12px 6px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: rgba(0, 0, 0, 0.87);
+	font-size: 16px;
+	line-height: 24px;
+	border-bottom: solid 1px #e8e8e8;
+}
+.supplementBtn {
+	font-family: $font-1;
+	color: #424950;
+	padding: 6px 16px;
+	font-size: 14px;
+	text-decoration: none;
+	line-height: 18px;
+	border-radius: 4px;
+	background-color: #e8e9ea;
+}
