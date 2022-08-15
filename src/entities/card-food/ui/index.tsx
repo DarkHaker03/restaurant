@@ -1,18 +1,23 @@
 import { FC } from 'react';
 import { useUnit } from 'effector-react';
+import { selectedFoodModel } from 'process/selectedFood';
+import { Counter } from 'shared/counter';
 import cx from 'clsx';
-import { setCounter } from 'pages/main/model';
-import { mainModel } from 'pages/main';
 import styles from './styles.module.scss';
 
-const CardFood: FC<mainModel.ItemOfProductsKeys> = ({
-  id, image, name, price, weight,
-}) => {
-  const { $idOfClickedCardFood, $counter } = mainModel;
-  const [idOfClickedCardFood, counter] = useUnit([$idOfClickedCardFood, $counter]);
-  const isClickedOnPrice = idOfClickedCardFood === id;
-  const handleClick = () => {
-    counter !== 1 ? setCounter(counter - 1) : mainModel.setIdOfClickedCardFood(0);
+const CardFood: FC<selectedFoodModel.ItemOfProductsKeys> = (item) => {
+  const {
+    id, image, name, weight, price,
+  } = item;
+  const {
+    $selectedFood, $counter, setSelectedFood, defaultSelectedFood, setCounter,
+  } = selectedFoodModel;
+  const [selectedFood, counter] = useUnit([$selectedFood, $counter]);
+  const isClickedOnPrice = selectedFood.id === id;
+  const counterProps = {
+    leftBtn: () => (counter !== 1 ? setCounter(counter - 1) : setSelectedFood(defaultSelectedFood)),
+    counter,
+    rightBtn: () => setCounter(counter + 1),
   };
   return (
     <div key={id} className={cx(styles['card-food'], isClickedOnPrice && styles['border-bottom'])}>
@@ -22,13 +27,9 @@ const CardFood: FC<mainModel.ItemOfProductsKeys> = ({
       {
         isClickedOnPrice
           ? (
-            <div className={styles.priceClicked}>
-              <div onClick={handleClick} className={styles.counterBtn}>-</div>
-              <div className={styles.counter}>{counter}</div>
-              <div onClick={() => setCounter(counter + 1)} className={styles.counterBtn}>+</div>
-            </div>
+            <Counter {...counterProps} />
           )
-          : <div className={styles.price} onClick={() => mainModel.setIdOfClickedCardFood(id)}>{`${price} ₽`}</div>
+          : <div className={styles.price} onClick={() => setSelectedFood(item)}>{`${price} ₽`}</div>
       }
     </div>
   );
