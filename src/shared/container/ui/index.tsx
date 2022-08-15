@@ -15,7 +15,7 @@ const Container: FC<Props> = ({ children }) => {
   const isConfirm = PAGES_WITHOUT_CONTIANER.some((page) => page === currentPage);
   console.log(isConfirm);
   return (
-    <div style={isConfirm ? {} : { margin: '16px 16px 120px 16px' }}>
+    <div style={isConfirm ? {} : { margin: '16px 16px 120px 16px', maxWidth: '400px' }}>
       {children}
     </div>
   );
