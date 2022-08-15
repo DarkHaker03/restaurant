@@ -34,9 +34,11 @@ sample({
   target: lowerBarModel.setIsOpen,
 });
 sample({
-  source: { a: $selectedFood, b: $counter, c: $basket },
+  source: { newItem: $selectedFood, pathOfNewItem: $counter, prevState: $basket },
   clock: lowerBarModel.clicked,
   filter: () => lowerBarModel.$link.getState() === '/basket',
-  fn: ({ a, b, c }) => [...c, { ...a, counter: b }],
+  fn: ({ newItem, pathOfNewItem, prevState }) => [
+    ...prevState, { ...newItem, counter: pathOfNewItem },
+  ],
   target: $basket,
 });
