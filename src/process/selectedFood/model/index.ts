@@ -1,5 +1,6 @@
 import { createEvent, restore, sample } from 'effector';
 import { lowerBarModel } from 'entities/lower-bar';
+import { $basket } from 'pages/basket/model';
 
 export type ItemOfProductsKeys = {
   id: number,
@@ -31,4 +32,11 @@ sample({
   clock: setSelectedFood,
   fn: ({ id }) => id !== 0,
   target: lowerBarModel.setIsOpen,
+});
+sample({
+  source: { a: $selectedFood, b: $counter, c: $basket },
+  clock: lowerBarModel.clicked,
+  filter: () => lowerBarModel.$link.getState() === '/basket',
+  fn: ({ a, b, c }) => [...c, { ...a, counter: b }],
+  target: $basket,
 });

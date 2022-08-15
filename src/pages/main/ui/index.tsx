@@ -1,9 +1,15 @@
+import { lowerBarModel } from 'entities/lower-bar';
 import { Menu } from 'entities/menu';
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import Products from './products';
 
 const Main: FC = () => {
-  console.log(3);
+  const { setLink, setText, setIsOpen } = lowerBarModel;
+  useEffect(() => {
+    setIsOpen(false);
+    setLink('/food-detail');
+    setText('Перейти к оформлению заказа');
+  }, []);
   return (
     <>
       <Menu />
