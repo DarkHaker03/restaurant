@@ -5,10 +5,17 @@ type Props = {
   children: JSX.Element;
 };
 
+const PAGES_WITHOUT_CONTIANER: string[] = [
+  '/basket',
+  '/food-detail-supplement',
+];
+
 const Container: FC<Props> = ({ children }) => {
-  const location = useLocation().pathname;
+  const currentPage = useLocation().pathname;
+  const isConfirm = PAGES_WITHOUT_CONTIANER.some((page) => page === currentPage);
+  console.log(isConfirm);
   return (
-    <div style={location !== '/basket' ? { margin: '16px 16px 120px 16px' } : {}}>
+    <div style={isConfirm ? {} : { margin: '16px 16px 120px 16px' }}>
       {children}
     </div>
   );

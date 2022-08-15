@@ -39,7 +39,7 @@ const BasketCard: FC<Props> = ({ item }) => {
           leftBtn={() => counterProps.lefBtn()}
           counter={item.counter}
           rightBtn={() => counterProps.rightBtn()}
-          supplementStyles={{ justifyContent: 'start' }}
+          supplementStyles={{ justifyContent: 'start', padding: '0' }}
           supplementStylesOfCounter={{ margin: '0 14px' }}
         />
       </div>

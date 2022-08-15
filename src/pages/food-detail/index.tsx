@@ -6,7 +6,54 @@ import { Link } from 'react-router-dom';
 import { Counter } from 'shared/counter';
 import styles from './styles.module.scss';
 
-const INGREDIEENTS = ['Вид лапши', 'Соусы на выбор', 'Дополнительно'];
+type ItemsOfArguments = {
+  name: string,
+  price: number
+}
+
+type IngridiensArguments = {
+  type: string,
+  items: ItemsOfArguments[]
+}
+
+export const INGREDIEENTS: IngridiensArguments[] = [
+  {
+    type: 'Вид лапши',
+    items: [
+      { name: 'Гречневая', price: 0 },
+      { name: 'Гречневая1', price: 0 },
+      { name: 'Гречневая2', price: 0 },
+      { name: 'Гречневая3', price: 0 },
+    ],
+  },
+  {
+    type: 'Вид лапши1',
+    items: [
+      { name: 'Гречневая', price: 0 },
+      { name: 'Гречневая3', price: 0 },
+      { name: 'Гречневая2', price: 0 },
+      { name: 'Гречневая3', price: 0 },
+    ],
+  },
+  {
+    type: 'Вид лапши2',
+    items: [
+      { name: 'Гречневая', price: 0 },
+      { name: 'Гречневая4', price: 0 },
+      { name: 'Гречневая2', price: 0 },
+      { name: 'Гречневая3', price: 0 },
+    ],
+  },
+  {
+    type: 'Вид лапши3',
+    items: [
+      { name: 'Гречневая', price: 0 },
+      { name: 'Гречневая5', price: 0 },
+      { name: 'Гречневая2', price: 0 },
+      { name: 'Гречневая3', price: 0 },
+    ],
+  },
+];
 
 const FoodDetail: FC = () => {
   const { $selectedFood, $counter, setCounter } = selectedFoodModel;
@@ -43,9 +90,9 @@ const FoodDetail: FC = () => {
         ? (
           <div>
             <div className={styles.h4}>Выберите состав </div>
-            {INGREDIEENTS.map((word) => (
-              <div className={styles.supplementWord} key={word}>
-                {word}
+            {INGREDIEENTS.map(({ type }) => (
+              <div className={styles.supplementWord} key={type}>
+                {type}
                 <Link className={styles.supplementBtn} to="/food-detail-supplement">Выбрать</Link>
               </div>
             ))}

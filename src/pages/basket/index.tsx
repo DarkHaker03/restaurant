@@ -27,7 +27,7 @@ const Basket: FC = () => {
     }
   }, [basket]);
   return (
-    <div style={{ padding: '16px' }}>
+    <div>
       <div className={styles['basket-row']}>
         <span className={styles.basket}>Корзина</span>
         <Link to="/" onClick={() => setBasket([])}>
