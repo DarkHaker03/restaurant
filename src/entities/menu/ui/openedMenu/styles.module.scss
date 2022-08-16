@@ -4,9 +4,9 @@
 	position: absolute;
 	width: 100vw;
 	height: 100vh;
-	background-color: #ccc;
+	background-color: #fff;
 	left: 0;
-	top: 80px;
+	top: 70px;
 	border-radius: 10px 10px 0px 0px;
 }
 
@@ -24,6 +24,16 @@
 
 .close-anim {
 	animation: close 0.5s;
+}
+
+.black-background {
+	background-color: rgba(0, 0, 0, 0.54);
+	height: 100vh;
+	width: 100vw;
+	z-index: -3;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 
 @keyframes open {
