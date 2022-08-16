@@ -7,3 +7,35 @@
 .activeItem {
 	background-color: #f2f3f5;
 }
+
+.input-radio {
+	border: solid 2px #b8c1cc;
+	border-radius: 100%;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}
+.input-radio-active {
+	background-color: #3f8ae0;
+	border: solid 2px #3f8ae0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+}
+
+.input-checkbox {
+	border: solid 2px #b8c1cc;
+	width: 18px;
+	border-radius: 4px;
+	height: 18px;
+	margin-right: 10px;
+}
+.input-checkbox-active {
+	background-color: #3f8ae0;
+	border: solid 2px #3f8ae0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+}

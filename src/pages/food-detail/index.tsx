@@ -8,47 +8,47 @@ import styles from './styles.module.scss';
 
 export type ItemsOfArguments = {
   name: string,
-  price: number
+  price: number,
 }
 
 export type IngridiensArguments = {
   type: string,
+  inputType: string,
   items: ItemsOfArguments[]
 }
 
 export const INGREDIEENTS: IngridiensArguments[] = [
   {
     type: 'Вид лапши',
+    inputType: 'radio',
     items: [
       { name: 'Гречневая', price: 0 },
-      { name: 'Гречневая1', price: 0 },
-      { name: 'Гречневая2', price: 0 },
+      { name: 'Яичная', price: 0 },
+      { name: 'Рисовая', price: 0 },
+      { name: 'Фунчоза', price: 0 },
+      { name: 'Стеклянная', price: 0 },
+      { name: 'Пшеничная', price: 0 },
     ],
   },
   {
-    type: 'Вид лапши1',
+    type: 'Соусы на выбор',
+    inputType: 'radio',
     items: [
-      { name: '2Гречневая', price: 0 },
-      { name: '2Гречневая3', price: 0 },
-      { name: '2Гречневая2', price: 0 },
+      { name: '1', price: 0 },
+      { name: '2', price: 0 },
+      { name: '3', price: 0 },
     ],
   },
   {
-    type: 'Вид лапши2',
+    type: 'Дополнительно',
+    inputType: 'checkbox',
     items: [
-      { name: '3Гречневая', price: 0 },
-      { name: '3Гречневая4', price: 0 },
-      { name: '3Гречневая2', price: 0 },
-      { name: '3Гречневая3', price: 0 },
-    ],
-  },
-  {
-    type: 'Вид лапши3',
-    items: [
-      { name: '4Гречневая', price: 0 },
-      { name: '4Гречневая5', price: 0 },
-      { name: '4Гречневая2', price: 0 },
-      { name: '4Гречневая3', price: 0 },
+      { name: 'Перец халапеньо1', price: 0 },
+      { name: 'Двойная порци2я курицы', price: 0 },
+      { name: 'Перец халапе3ньо', price: 0 },
+      { name: 'Двойная порци4я курицы', price: 0 },
+      { name: 'Перец халапен5ьо', price: 0 },
+      { name: 'Двойная порци6я курицы', price: 0 },
     ],
   },
 ];

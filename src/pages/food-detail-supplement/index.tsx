@@ -7,7 +7,7 @@ import ActiveItems from './active-items';
 const FoodDetailSupplement: FC = () => {
   const { setLink, setText, setIsOpen } = lowerBarModel;
   const [active, setActive] = useState(INGREDIEENTS[0]);
-  const [activeItems, setActiveItem] = useState<string[]>([]);
+  const [activeItems, setActiveItems] = useState<string[]>([]);
   useEffect(() => {
     setIsOpen(true);
     setLink('/food-detail');
@@ -34,7 +34,7 @@ const FoodDetailSupplement: FC = () => {
             item={item}
             active={active}
             activeItems={activeItems}
-            setActiveItem={setActiveItem}
+            setActiveItems={setActiveItems}
           />
         ))}
       </div>
