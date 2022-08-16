@@ -1,11 +1,12 @@
 import { $basket, ItemOfProductsKeysWithCounter, setBasket } from 'pages/basket/model';
 import { FC } from 'react';
-import { Counter } from 'shared/counter';
 import { useUnit } from 'effector-react';
+import { Counter } from 'shared/counter';
+import tableImg from 'shared/assets/img/stol.png';
 import styles from './styles.module.scss';
 
 type Props = {
-  item: ItemOfProductsKeysWithCounter
+  item: ItemOfProductsKeysWithCounter,
 }
 
 const BasketCard: FC<Props> = ({ item }) => {
@@ -29,11 +30,11 @@ const BasketCard: FC<Props> = ({ item }) => {
   };
   return (
     <div className={styles['item-of-backet']}>
-      <img src={item.image} alt="" className={styles.img} />
+      <img src={!item.isTable ? item.image : tableImg} alt="" className={styles.img} />
       <div className={styles.container}>
         <div className={styles['top-row']}>
           <span className={styles.name}>{item.name}</span>
-          <span className={styles.price}>{`${item.price * item.counter} ₽`}</span>
+          {!item.isTable && <span className={styles.price}>{`${item.price * item.counter} ₽`}</span>}
         </div>
         <Counter
           leftBtn={() => counterProps.lefBtn()}

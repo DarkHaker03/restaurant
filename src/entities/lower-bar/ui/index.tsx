@@ -11,10 +11,11 @@ const LowerBar: FC = () => {
   const [text, link, isOpen] = useUnit([$text, $link, $isOpen]);
   if (isOpen) {
     return (
-      <div className={styles.lowerBar}>
+      <div className={styles['lower-bar']}>
         <Link className={styles.btn} to={link} onClick={() => clicked()}>
           {text}
         </Link>
+        <span className={styles['lower-bar-line']} />
       </div>
     );
   }

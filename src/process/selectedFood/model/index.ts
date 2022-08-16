@@ -38,7 +38,7 @@ sample({
   clock: lowerBarModel.clicked,
   filter: () => lowerBarModel.$link.getState() === '/basket',
   fn: ({ newItem, pathOfNewItem, prevState }) => [
-    ...prevState, { ...newItem, counter: pathOfNewItem },
+    { ...newItem, counter: pathOfNewItem }, ...prevState,
   ],
   target: $basket,
 });
