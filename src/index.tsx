@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename={process.env.REACT_APP_BASE_NAME}>
+    <BrowserRouter basename={process.env.NODE_ENV === 'production' ? process.env.REACT_APP_BASE_NAME : ''}>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
