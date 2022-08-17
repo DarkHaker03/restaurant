@@ -14,6 +14,7 @@ const Basket: FC = () => {
   const sumPrice = basket.reduce((sum, item) => {
     return sum + item.price * item.counter;
   }, 0);
+  console.log('page basket: map without normal key');
   useEffect(() => {
     setIsOpen(true);
     setLink('');
@@ -36,7 +37,7 @@ const Basket: FC = () => {
       </div>
       <div>
         {basket.map((item) => (
-          <BasketCard item={item} key={item.id} />
+          <BasketCard item={item} />
         ))}
       </div>
     </div>
