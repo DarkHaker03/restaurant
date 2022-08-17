@@ -1,6 +1,5 @@
-import { createStore, createEvent, sample } from 'effector';
+import { createStore, createEvent } from 'effector';
 import { selectedFoodModel } from 'process/selectedFood';
-import { lowerBarModel } from 'entities/lower-bar';
 
 export type ItemOfProductsKeysWithCounter = selectedFoodModel.ItemOfProductsKeys & {
   counter: number,
@@ -24,17 +23,3 @@ export const $basket = createStore<ItemOfProductsKeysWithCounter[]>([DEFAULT_STA
 
 $basket
   .on(setBasket, (_, newState) => newState);
-sample({
-  source: {
-    newItem: selectedFoodModel.$selectedFood,
-    pathOfNewItem: selectedFoodModel.$counter,
-    prevState: $basket,
-    link: lowerBarModel.$link,
-  },
-  clock: lowerBarModel.clicked,
-  filter: ({ link }) => link === '/basket',
-  fn: ({ newItem, pathOfNewItem, prevState }) => [
-    { ...newItem, counter: pathOfNewItem }, ...prevState,
-  ],
-  target: $basket,
-});
