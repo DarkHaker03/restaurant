@@ -1,6 +1,6 @@
 import { useUnit } from 'effector-react';
 import { lowerBarModel } from 'widgets/lower-bar';
-import { selectedFoodModel } from 'process/selectedFood';
+import { selectedFoodModel } from 'process/selected-food';
 import { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { INGREDIEENTS } from 'shared/api/ingridients';

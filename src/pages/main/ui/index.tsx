@@ -1,6 +1,6 @@
 import { lowerBarModel } from 'widgets/lower-bar';
 import { Menu } from 'entities/menu';
-import { selectedFoodModel } from 'process/selectedFood';
+import { selectedFoodModel } from 'process/selected-food';
 import { FC, useEffect } from 'react';
 import Products from './products';
 
