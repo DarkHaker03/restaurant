@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useUnit } from 'effector-react';
-import { selectedFoodModel } from 'process/selectedFood';
+import { selectedFoodModel } from 'process/selected-food';
 import { Counter } from 'shared/ui/counter';
 import cx from 'clsx';
 import styles from './styles.module.scss';

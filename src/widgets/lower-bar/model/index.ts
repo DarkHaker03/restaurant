@@ -1,5 +1,5 @@
 import { createEvent, restore, sample } from 'effector';
-import { selectedFoodModel } from 'process/selectedFood';
+import { selectedFoodModel } from 'process/selected-food';
 
 export const setText = createEvent<string>();
 export const setLink = createEvent<string>();

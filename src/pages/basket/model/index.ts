@@ -1,5 +1,5 @@
 import { createEvent, sample, restore } from 'effector';
-import { selectedFoodModel } from 'process/selectedFood';
+import { selectedFoodModel } from 'process/selected-food';
 import { lowerBarModel } from 'widgets/lower-bar';
 
 export type ItemOfProductsKeysWithCounter = selectedFoodModel.ItemOfProductsKeys & {
