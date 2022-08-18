@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import { lowerBarModel } from 'widgets/lower-bar';
 import { INGREDIEENTS } from 'pages/food-detail/ui';
 import styles from './styles.module.scss';
-import ActiveItem from './active-items';
+import ActiveItem from './active-item';
 
 const FoodDetailSupplement: FC = () => {
   const { setLink, setText, setIsOpen } = lowerBarModel;
