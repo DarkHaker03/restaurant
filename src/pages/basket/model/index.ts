@@ -1,4 +1,4 @@
-import { createStore, createEvent, sample } from 'effector';
+import { createEvent, sample, restore } from 'effector';
 import { selectedFoodModel } from 'process/selectedFood';
 import { lowerBarModel } from 'widgets/lower-bar';
 
@@ -20,10 +20,7 @@ const DEFAULT_STATE = {
 
 export const setBasket = createEvent<ItemOfProductsKeysWithCounter[]>();
 
-export const $basket = createStore<ItemOfProductsKeysWithCounter[]>([DEFAULT_STATE]);
-
-$basket
-  .on(setBasket, (_, newState) => newState);
+export const $basket = restore<ItemOfProductsKeysWithCounter[]>(setBasket, [DEFAULT_STATE]);
 
 sample({
   source: {
