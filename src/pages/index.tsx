@@ -1,15 +1,13 @@
-import React, { FC, Suspense } from 'react';
+import { FC, Suspense } from 'react';
 import { Route, Routes } from 'react-router';
 import { Container } from 'shared/container';
 import { Header } from 'widgets/header';
 import { Main } from 'pages/main';
 import { LowerBar } from 'entities/lower-bar';
 import { Loading } from 'shared/loading';
-
-const Basket = React.lazy(() => import('./basket'));
-const FoodDetail = React.lazy(() => import('./food-detail'));
-const FoodDetailSupplement = React.lazy(() => import('./food-detail-supplement'));
-// const Main = React.lazy(() => import('./main/ui'));
+import Basket from './basket';
+import FoodDetail from './food-detail';
+import FoodDetailSupplement from './food-detail-supplement';
 
 const Pages: FC = () => (
   <>
