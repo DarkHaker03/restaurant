@@ -1,10 +1,9 @@
-import { FC, Suspense } from 'react';
+import { FC } from 'react';
 import { Route, Routes } from 'react-router';
 import { Container } from 'shared/ui/container';
 import { Header } from 'widgets/header';
 import { Main } from 'pages/main';
 import { LowerBar } from 'widgets/lower-bar';
-import { Loading } from 'shared/ui/loading';
 import { Basket } from './basket';
 import { FoodDetail } from './food-detail';
 import { FoodDetailSupplement } from './food-detail-supplement';
@@ -15,9 +14,9 @@ const Pages: FC = () => (
     <Container>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/food-detail-supplement" element={<Suspense fallback={<Loading />}><FoodDetailSupplement /></Suspense>} />
-        <Route path="/food-detail" element={<Suspense fallback={<Loading />}><FoodDetail /></Suspense>} />
-        <Route path="/basket" element={<Suspense fallback={<Loading />}><Basket /></Suspense>} />
+        <Route path="/food-detail-supplement" element={<FoodDetailSupplement />} />
+        <Route path="/food-detail" element={<FoodDetail />} />
+        <Route path="/basket" element={<Basket />} />
       </Routes>
     </Container>
     <LowerBar />
