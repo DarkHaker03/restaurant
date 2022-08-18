@@ -13,7 +13,6 @@ const PAGES_WITHOUT_CONTIANER: string[] = [
 const Container: FC<Props> = ({ children }) => {
   const currentPage = useLocation().pathname;
   const isConfirm = PAGES_WITHOUT_CONTIANER.some((page) => page === currentPage);
-  console.log(isConfirm);
   return (
     <div style={isConfirm ? { margin: '0 0 120px 0' } : { margin: '16px 16px 120px 16px', maxWidth: '400px' }}>
       {children}
