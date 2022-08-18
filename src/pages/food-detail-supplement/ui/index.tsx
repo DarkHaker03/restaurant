@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
+import { INGREDIEENTS } from 'shared/api/ingridients';
 import { lowerBarModel } from 'widgets/lower-bar';
-import { INGREDIEENTS } from 'pages/food-detail/ui';
 import styles from './styles.module.scss';
 import ActiveItem from './active-item';
 
