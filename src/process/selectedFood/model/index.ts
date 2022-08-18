@@ -1,5 +1,4 @@
-import { createEvent, restore, sample } from 'effector';
-import { lowerBarModel } from 'widgets/lower-bar';
+import { createEvent, restore } from 'effector';
 
 export type ItemOfProductsKeys = {
   id: number,
@@ -27,8 +26,3 @@ export const $selectedFood = restore<ItemOfProductsKeys>(setSelectedFood, DEFAUL
 export const $counter = restore<number>(setCounter, 1);
 
 $counter.reset(setSelectedFood);
-sample({
-  clock: setSelectedFood,
-  fn: ({ id }) => id !== 0,
-  target: lowerBarModel.setIsOpen,
-});
