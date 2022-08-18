@@ -10,12 +10,14 @@ const CardFood: FC<selectedFoodModel.ItemOfProductsKeys> = (item) => {
     id, image, name, weight, price,
   } = item;
   const {
-    $selectedFood, $counter, setSelectedFood, defaultSelectedFood, setCounter,
+    $selectedFood, $counter, setSelectedFood, DEFAULT_SELECTED_FOOD, setCounter,
   } = selectedFoodModel;
   const [selectedFood, counter] = useUnit([$selectedFood, $counter]);
   const isClickedOnPrice = selectedFood.id === id;
   const counterProps = {
-    leftBtn: () => (counter !== 1 ? setCounter(counter - 1) : setSelectedFood(defaultSelectedFood)),
+    leftBtn: () => (
+      counter !== 1 ? setCounter(counter - 1) : setSelectedFood(DEFAULT_SELECTED_FOOD)
+    ),
     counter,
     rightBtn: () => setCounter(counter + 1),
   };

@@ -10,7 +10,7 @@ export type ItemOfProductsKeys = {
   price: number,
   weight: string
 }
-export const defaultSelectedFood = {
+export const DEFAULT_SELECTED_FOOD = {
   id: 0,
   description: '',
   image: '',
@@ -23,7 +23,7 @@ export const defaultSelectedFood = {
 export const setSelectedFood = createEvent<ItemOfProductsKeys>();
 export const setCounter = createEvent<number>();
 
-export const $selectedFood = restore<ItemOfProductsKeys>(setSelectedFood, defaultSelectedFood);
+export const $selectedFood = restore<ItemOfProductsKeys>(setSelectedFood, DEFAULT_SELECTED_FOOD);
 export const $counter = restore<number>(setCounter, 1);
 
 $counter.reset(setSelectedFood);

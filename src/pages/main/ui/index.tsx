@@ -7,7 +7,7 @@ import Products from './products';
 const Main: FC = () => {
   const { setLink, setText, setIsOpen } = lowerBarModel;
   useEffect(() => {
-    selectedFoodModel.setSelectedFood(selectedFoodModel.defaultSelectedFood);
+    selectedFoodModel.setSelectedFood(selectedFoodModel.DEFAULT_SELECTED_FOOD);
     setIsOpen(false);
     setLink('/food-detail');
     setText('Перейти к оформлению заказа');
