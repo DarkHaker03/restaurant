@@ -1,6 +1,6 @@
 import cx from 'clsx';
 import React, { FC, useState } from 'react';
-import { Close } from 'shared/close';
+import { Close } from 'shared/ui/close';
 import ItemsArray from '../ItemsArray';
 import styles from './styles.module.scss';
 

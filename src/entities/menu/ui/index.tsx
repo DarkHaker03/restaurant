@@ -1,7 +1,7 @@
 import cx from 'clsx';
 import { useUnit } from 'effector-react';
 import { FC, useState } from 'react';
-import { Burger } from 'shared/burger';
+import { Burger } from 'shared/ui/burger';
 import { menuModel } from '..';
 import ItemsArray from './ItemsArray';
 import OpenedMenu from './openedMenu';

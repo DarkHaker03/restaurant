@@ -1,7 +1,7 @@
 import { basketModel } from 'pages/basket';
 import { FC } from 'react';
 import { useUnit } from 'effector-react';
-import { Counter } from 'shared/counter';
+import { Counter } from 'shared/ui/counter';
 import tableImg from 'shared/assets/img/stol.png';
 import styles from './styles.module.scss';
 

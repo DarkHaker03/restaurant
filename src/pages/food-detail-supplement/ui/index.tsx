@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from 'react';
-import { lowerBarModel } from 'entities/lower-bar';
+import { lowerBarModel } from 'widgets/lower-bar';
 import { INGREDIEENTS } from 'pages/food-detail/ui';
 import styles from './styles.module.scss';
-import ActiveItems from './active-items';
+import ActiveItem from './active-items';
 
 const FoodDetailSupplement: FC = () => {
   const { setLink, setText, setIsOpen } = lowerBarModel;
@@ -29,7 +29,7 @@ const FoodDetailSupplement: FC = () => {
       </div>
       <div>
         {active.items.map((item) => (
-          <ActiveItems
+          <ActiveItem
             key={item.name}
             item={item}
             active={active}

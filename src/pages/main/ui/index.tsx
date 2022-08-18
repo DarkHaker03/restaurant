@@ -1,4 +1,4 @@
-import { lowerBarModel } from 'entities/lower-bar';
+import { lowerBarModel } from 'widgets/lower-bar';
 import { Menu } from 'entities/menu';
 import { selectedFoodModel } from 'process/selectedFood';
 import { FC, useEffect } from 'react';

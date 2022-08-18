@@ -10,7 +10,7 @@ type Props = {
   setActiveItems: React.Dispatch<React.SetStateAction<string[]>>,
 }
 
-const ActiveItems: FC<Props> = ({
+const ActiveItem: FC<Props> = ({
   item, active, activeItems, setActiveItems,
 }) => {
   const { name, price } = item;
@@ -43,4 +43,4 @@ const ActiveItems: FC<Props> = ({
   );
 };
 
-export default ActiveItems;
+export default ActiveItem;

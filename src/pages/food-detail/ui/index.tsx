@@ -1,9 +1,9 @@
 import { useUnit } from 'effector-react';
-import { lowerBarModel } from 'entities/lower-bar';
+import { lowerBarModel } from 'widgets/lower-bar';
 import { selectedFoodModel } from 'process/selectedFood';
 import { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Counter } from 'shared/counter';
+import { Counter } from 'shared/ui/counter';
 import styles from './styles.module.scss';
 
 export type ItemsOfArguments = {

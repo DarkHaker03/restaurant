@@ -1,6 +1,6 @@
 import { createStore, createEvent, sample } from 'effector';
 import { selectedFoodModel } from 'process/selectedFood';
-import { lowerBarModel } from 'entities/lower-bar';
+import { lowerBarModel } from 'widgets/lower-bar';
 
 export type ItemOfProductsKeysWithCounter = selectedFoodModel.ItemOfProductsKeys & {
   counter: number,

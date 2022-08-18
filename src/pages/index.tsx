@@ -1,10 +1,10 @@
 import { FC, Suspense } from 'react';
 import { Route, Routes } from 'react-router';
-import { Container } from 'shared/container';
+import { Container } from 'shared/ui/container';
 import { Header } from 'widgets/header';
 import { Main } from 'pages/main';
-import { LowerBar } from 'entities/lower-bar';
-import { Loading } from 'shared/loading';
+import { LowerBar } from 'widgets/lower-bar';
+import { Loading } from 'shared/ui/loading';
 import { Basket } from './basket';
 import { FoodDetail } from './food-detail';
 import { FoodDetailSupplement } from './food-detail-supplement';

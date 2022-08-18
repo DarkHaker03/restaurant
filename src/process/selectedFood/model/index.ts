@@ -1,5 +1,5 @@
 import { createEvent, restore, sample } from 'effector';
-import { lowerBarModel } from 'entities/lower-bar';
+import { lowerBarModel } from 'widgets/lower-bar';
 
 export type ItemOfProductsKeys = {
   id: number,

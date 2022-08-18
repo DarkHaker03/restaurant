@@ -1,5 +1,5 @@
 import { FC, useEffect } from 'react';
-import { lowerBarModel } from 'entities/lower-bar';
+import { lowerBarModel } from 'widgets/lower-bar';
 import { Link, useNavigate } from 'react-router-dom';
 import { useUnit } from 'effector-react';
 import img from 'shared/assets/img/basket.svg';
