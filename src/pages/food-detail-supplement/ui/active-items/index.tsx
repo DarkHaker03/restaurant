@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ItemsOfArguments, IngridiensArguments } from 'pages/food-detail';
+import { ItemsOfArguments, IngridiensArguments } from 'pages/food-detail/ui';
 import cx from 'clsx';
 import styles from './styles.module.scss';
 

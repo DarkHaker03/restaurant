@@ -1,4 +1,4 @@
-import { $basket, ItemOfProductsKeysWithCounter, setBasket } from 'pages/basket/model';
+import { basketModel } from 'pages/basket';
 import { FC } from 'react';
 import { useUnit } from 'effector-react';
 import { Counter } from 'shared/counter';
@@ -6,26 +6,26 @@ import tableImg from 'shared/assets/img/stol.png';
 import styles from './styles.module.scss';
 
 type Props = {
-  item: ItemOfProductsKeysWithCounter,
+  item: basketModel.ItemOfProductsKeysWithCounter,
 }
 
 const BasketCard: FC<Props> = ({ item }) => {
-  const basket = useUnit($basket);
+  const basket = useUnit(basketModel.$basket);
   const counterProps = {
     lefBtn: () => {
       const newItem = { ...item, counter: item.counter - 1 };
       if (item.counter !== 1) {
         const newBasket = basket.map((i) => { return i.id === newItem.id ? newItem : i; });
-        setBasket(newBasket);
+        basketModel.setBasket(newBasket);
       } else {
         const newBasket = basket.filter((i) => { return i.id !== newItem.id; });
-        setBasket(newBasket);
+        basketModel.setBasket(newBasket);
       }
     },
     rightBtn: () => {
       const newItem = { ...item, counter: item.counter + 1 };
       const newBasket = basket.map((i) => { return i.id === newItem.id ? newItem : i; });
-      setBasket(newBasket);
+      basketModel.setBasket(newBasket);
     },
   };
   return (
