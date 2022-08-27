@@ -37,3 +37,11 @@
 	align-items: center;
 	justify-content: center;
 }
+.pricea-after-clicked {
+	font-size: 12px;
+	line-height: 16px;
+	font-family: $font-3;
+	span {
+		margin: 0 3px;
+	}
+}

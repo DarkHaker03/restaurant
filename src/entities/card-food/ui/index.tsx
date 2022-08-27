@@ -25,7 +25,16 @@ const CardFood: FC<selectedFoodModel.ItemOfProductsKeys> = (item) => {
     <div className={cx(styles['card-food'], isClickedOnPrice && styles['border-bottom'])}>
       <img src={image} alt={`name: ${name} ,price: ${price}`} />
       <div className={styles.name}>{name}</div>
-      <div className={styles.weight} style={isClickedOnPrice ? { margin: '0 0 21px 12px' } : {}}>{`${weight} г`}</div>
+      <div style={{ marginBottom: '30px' }}>
+        <span className={styles.weight} style={isClickedOnPrice ? { margin: '0 0 21px 12px' } : {}}>{`${weight} г`}</span>
+        {isClickedOnPrice && (
+          <span className={styles['pricea-after-clicked']}>
+            <span>·</span>
+            {price * counter}
+            ₽
+          </span>
+        )}
+      </div>
       {
         isClickedOnPrice
           ? (
