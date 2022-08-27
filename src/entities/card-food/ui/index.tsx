@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { useUnit } from 'effector-react';
 import { selectedFoodModel } from 'process/selected-food';
+import { useNavigate } from 'react-router';
 import { Counter } from 'shared/ui/counter';
 import cx from 'clsx';
 import styles from './styles.module.scss';
@@ -21,10 +22,17 @@ const CardFood: FC<selectedFoodModel.ItemOfProductsKeys> = (item) => {
     counter,
     rightBtn: () => setCounter(counter + 1),
   };
+  const navigate = useNavigate();
+  const handleClick = () => {
+    setSelectedFood(item);
+    navigate('/food-detail');
+  };
   return (
     <div className={cx(styles['card-food'], isClickedOnPrice && styles['border-bottom'])}>
-      <img src={image} alt={`name: ${name} ,price: ${price}`} />
-      <div className={styles.name}>{name}</div>
+      <div onClick={handleClick}>
+        <img src={image} alt={`name: ${name} ,price: ${price}`} />
+        <div className={styles.name}>{name}</div>
+      </div>
       <div style={{ marginBottom: '30px' }}>
         <span className={styles.weight} style={isClickedOnPrice ? { margin: '0 0 21px 12px' } : {}}>{`${weight} г`}</span>
         {isClickedOnPrice && (
