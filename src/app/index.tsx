@@ -1,10 +1,15 @@
 import Pages from 'pages';
 import './index.scss';
 
-const App = () => (
-  <div className="App">
-    <Pages />
-  </div>
-);
+// const tg = window.Telegram;
+
+const App = () => {
+  console.log(3);
+  return (
+    <div className="App">
+      <Pages />
+    </div>
+  );
+};
 
 export default App;
