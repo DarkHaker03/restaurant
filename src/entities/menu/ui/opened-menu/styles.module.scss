@@ -1,7 +1,7 @@
 @import "shared/assets/help-styles/variables.scss";
 
 .openedMenu {
-	position: absolute;
+	position: fixed;
 	width: 100vw;
 	height: 100vh;
 	background-color: #fff;
@@ -31,7 +31,7 @@
 	height: 100vh;
 	width: 100vw;
 	z-index: -3;
-	position: absolute;
+	position: fixed;
 	left: 0;
 	top: 0;
 }
