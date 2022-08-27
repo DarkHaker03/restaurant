@@ -1,7 +1,7 @@
 import cx from 'clsx';
 import React, { FC, useState } from 'react';
 import { Close } from 'shared/ui/close';
-import ItemsArray from '../ItemsArray';
+import ItemsArray from '../items-array';
 import styles from './styles.module.scss';
 
 type Props = {

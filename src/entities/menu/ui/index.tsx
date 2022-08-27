@@ -3,8 +3,8 @@ import { useUnit } from 'effector-react';
 import { FC, useState } from 'react';
 import { Burger } from 'shared/ui/burger';
 import { menuModel } from '..';
-import ItemsArray from './ItemsArray';
-import OpenedMenu from './openedMenu';
+import ItemsArray from './items-array';
+import OpenedMenu from './opened-menu';
 import styles from './styles.module.scss';
 
 const Menu: FC = () => {
