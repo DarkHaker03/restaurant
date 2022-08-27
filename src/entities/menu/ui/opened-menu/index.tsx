@@ -16,7 +16,6 @@ const OpenedMenu: FC<Props> = ({ onClick }) => {
       onClick(false);
     }, 460);
   };
-
   return (
     <>
       <div className={cx(styles.openedMenu, styles['open-anim'], isAnimationClose && styles['close-anim'])}>
@@ -24,7 +23,7 @@ const OpenedMenu: FC<Props> = ({ onClick }) => {
           <Close onClick={handleClick} />
           Меню
         </div>
-        <ItemsArray version="openedMenu" />
+        <ItemsArray closeMenu={onClick} />
       </div>
       {!isAnimationClose && <span className={styles['black-background']} />}
     </>
