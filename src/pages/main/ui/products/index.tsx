@@ -1,12 +1,19 @@
 import { CardFood } from 'entities/card-food';
-import { menuModel } from 'entities/menu';
+import { menuApi } from 'shared/api/menu';
 import { useUnit } from 'effector-react';
 
 const Products = () => {
-  const { products } = useUnit(menuModel.$selectedItem);
+  const products = useUnit(menuApi.$menu);
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-      { products.map((item) => <CardFood {...item} key={item.id} />)}
+    <div>
+      { products.map((item) => (
+        <>
+          <div id={item.name}>{item.name}</div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+            {item.products.map((product) => <CardFood {...product} key={product.id} />)}
+          </div>
+        </>
+      ))}
     </div>
   );
 };
