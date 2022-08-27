@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ItemsOfArguments, IngridiensArguments } from 'shared/api/ingridients';
+import { ItemsOfArguments, IngridiensArguments } from 'shared/api/ingridients/model';
 import cx from 'clsx';
 import styles from './styles.module.scss';
 

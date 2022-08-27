@@ -1,9 +1,9 @@
 import { createEvent, restore } from 'effector';
-import { $menu, MenuKeys } from 'pages/main/model';
+import { menuApi } from 'shared/api/menu';
 
-const firstItem = $menu.getState()[0];
+const firstItem = menuApi.$menu.getState()[0];
 
-const setSelectedItem = createEvent<MenuKeys>();
+const setSelectedItem = createEvent<menuApi.MenuKeys>();
 
 const $selectedItem = restore(setSelectedItem, firstItem);
 

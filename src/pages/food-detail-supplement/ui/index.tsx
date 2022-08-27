@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react';
-import { INGREDIEENTS } from 'shared/api/ingridients';
+import { INGREDIEENTS } from 'shared/api/ingridients/model';
 import { lowerBarModel } from 'widgets/lower-bar';
 import styles from './styles.module.scss';
 import ActiveItem from './active-item';

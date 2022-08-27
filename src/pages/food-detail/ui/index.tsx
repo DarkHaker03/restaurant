@@ -3,7 +3,7 @@ import { lowerBarModel } from 'widgets/lower-bar';
 import { selectedFoodModel } from 'process/selected-food';
 import { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { INGREDIEENTS } from 'shared/api/ingridients';
+import { INGREDIEENTS } from 'shared/api/ingridients/model';
 import { Counter } from 'shared/ui/counter';
 import styles from './styles.module.scss';
 

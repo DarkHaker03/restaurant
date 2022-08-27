@@ -1,8 +1,7 @@
 import { FC } from 'react';
 import cx from 'clsx';
 import { useUnit } from 'effector-react';
-import { mainModel } from 'pages/main';
-import { MenuKeys } from 'pages/main/model';
+import { menuApi } from 'shared/api/menu';
 import check from 'shared/assets/img/check.svg';
 import { menuModel } from '../..';
 import styles from './styles.module.scss';
@@ -12,8 +11,8 @@ type ItemsArrayProps = {
 }
 
 type ItemProps = {
-  item: MenuKeys
-  selectedItem: MenuKeys
+  item: menuApi.MenuKeys,
+  selectedItem: menuApi.MenuKeys
 }
 
 const Item: FC<ItemProps> = ({ item, selectedItem }) => (
@@ -34,7 +33,7 @@ const ItemOfOpenedMenu: FC<ItemProps> = ({ item, selectedItem }) => (
 
 const ItemsArray: FC<ItemsArrayProps> = ({ version }) => {
   const selectedItem = useUnit(menuModel.$selectedItem);
-  const menu = useUnit(mainModel.$menu);
+  const menu = useUnit(menuApi.$menu);
   return (
     <div className={cx(version === 'openedMenu' ? null : styles['scroll-element'])}>
       {menu.map((item) => {
