@@ -4,6 +4,14 @@
 	align-items: center;
 	z-index: 3;
 }
+.fixed-menu {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 10px 16px;
+	background-color: #fff;
+}
 .selectedItem {
 	margin: 18px 0;
 	font-size: 20px;

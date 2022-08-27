@@ -1,5 +1,7 @@
 import cx from 'clsx';
-import { FC, useState } from 'react';
+import {
+  FC, useCallback, useEffect, useState,
+} from 'react';
 import { Burger } from 'shared/ui/burger';
 import { menuModel } from '..';
 import ItemsArray from './items-array';
@@ -12,8 +14,21 @@ menuModel.$selectedItem.watch(({ name }) => {
 
 const Menu: FC = () => {
   const [isOpenMenuConfirm, setIsOpenMenuConfirm] = useState<boolean>(false);
+  const [isScroll, setIsScroll] = useState<boolean>(false);
+  const scrollFunc = useCallback(() => {
+    if (window.scrollY > 60) {
+      setIsScroll(true);
+    } else {
+      setIsScroll(false);
+    }
+  }, []);
+  console.log(3);
+  useEffect(() => {
+    window.addEventListener('scroll', scrollFunc);
+    // return window.addEventListener('scroll', scrollFunc);
+  }, []);
   return (
-    <div className={cx(styles.menu)}>
+    <div className={cx(styles.menu, isScroll && styles['fixed-menu'])}>
       <Burger onClick={setIsOpenMenuConfirm} />
       <ItemsArray />
       {isOpenMenuConfirm ? <OpenedMenu onClick={setIsOpenMenuConfirm} /> : null}
