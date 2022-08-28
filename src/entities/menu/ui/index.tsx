@@ -1,8 +1,6 @@
 import cx from 'clsx';
 import { useUnit } from 'effector-react';
-import {
-  FC, useEffect, useState,
-} from 'react';
+import { FC, useEffect, useState } from 'react';
 import { menuApi } from 'shared/api/menu';
 import { Burger } from 'shared/ui/burger';
 import { menuModel } from '..';
@@ -15,14 +13,7 @@ menuModel.$selectedItem.watch(({ name }) => {
 });
 
 const Menu: FC = () => {
-  const [menu,
-    setSelectedItem,
-  ] = useUnit(
-    [
-      menuApi.$menu,
-      menuModel.setSelectedItem,
-    ],
-  );
+  const [menu, setSelectedItem] = useUnit([menuApi.$menu, menuModel.setSelectedItem]);
   const [isOpenMenuConfirm, setIsOpenMenuConfirm] = useState<boolean>(false);
   const [isPageScroll, setIsPageScroll] = useState<boolean>(false);
   const changeIsPageScroll = () => {
@@ -39,10 +30,11 @@ const Menu: FC = () => {
     }
     timer = setTimeout(() => {
       for (const item of menu) {
-        const elemPositionY = Math.round(
-          document.getElementById(item.name)?.getBoundingClientRect().top ?? 0,
-        );
-        if (elemPositionY > -300 && elemPositionY < 300) {
+        const elemRect = document.getElementById(item.name)?.getBoundingClientRect();
+        const halfOfWindowHeight = window.innerHeight / 2;
+        const isMoreHalfOfWindowHeight = (elemRect?.top ?? 0) < halfOfWindowHeight
+          && (elemRect?.bottom ?? 0) > halfOfWindowHeight;
+        if (isMoreHalfOfWindowHeight) {
           setSelectedItem(item);
         }
       }
@@ -52,10 +44,9 @@ const Menu: FC = () => {
     changeIsPageScroll();
     setWhereUserLocated();
   };
-  console.log(3);
   useEffect(() => {
     window.addEventListener('scroll', scrollPage);
-    return window.addEventListener('scroll', scrollPage);
+    return () => window.removeEventListener('scroll', scrollPage);
   }, []);
   const isFixedMenu = isPageScroll && !isOpenMenuConfirm;
   return (

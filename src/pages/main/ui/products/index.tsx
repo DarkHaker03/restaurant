@@ -8,8 +8,8 @@ const Products = () => {
   return (
     <>
       { menu.map((item) => (
-        <div>
-          <div className={styles.name} id={item.name}>{item.name}</div>
+        <div id={item.name} style={{ scrollMarginTop: '60px' }}>
+          <div className={styles.name}>{item.name}</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
             {item.products.map((product) => <CardFood {...product} key={product.id} />)}
           </div>
