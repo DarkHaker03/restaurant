@@ -6,4 +6,12 @@
 	margin: 18px 0;
 	font-family: $font-1;
 	color: rgba(0, 0, 0, 0.87);
+	scroll-margin-top: 60px;
+}
+.item-for-fixed-menu {
+	position: absolute;
+	top: -60px;
+	background-color: red;
+	height: 1px;
+	width: 110px;
 }

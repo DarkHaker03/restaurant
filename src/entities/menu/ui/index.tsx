@@ -9,7 +9,7 @@ import OpenedMenu from './opened-menu';
 import styles from './styles.module.scss';
 
 menuModel.$selectedItem.watch(({ name }) => {
-  document.getElementById(name)?.scrollIntoView();
+  document.getElementById(name)?.scrollIntoView({ behavior: 'smooth' });
 });
 
 const Menu: FC = () => {
@@ -28,11 +28,23 @@ const Menu: FC = () => {
     // return window.addEventListener('scroll', scrollFunc);
   }, []);
   return (
-    <div className={cx(styles.menu, isScroll && styles['fixed-menu'])}>
-      <Burger onClick={setIsOpenMenuConfirm} />
-      <ItemsArray />
-      {isOpenMenuConfirm ? <OpenedMenu onClick={setIsOpenMenuConfirm} /> : null}
-    </div>
+    <>
+      {/*
+        start
+        The additional element for normal scrolling
+        when selected new category in menu, because
+        menu changed his position from static to fixed
+        what change placement of all elements on page,
+        but scrollIntoView dont know about it
+      */}
+      {(isScroll && !isOpenMenuConfirm) && <div style={{ height: '34px' }} />}
+      {/* end */}
+      <div className={cx(styles.menu, (isScroll && !isOpenMenuConfirm) && styles['fixed-menu'])}>
+        <Burger onClick={setIsOpenMenuConfirm} />
+        <ItemsArray />
+        {isOpenMenuConfirm ? <OpenedMenu onClick={setIsOpenMenuConfirm} /> : null}
+      </div>
+    </>
   );
 };
 
