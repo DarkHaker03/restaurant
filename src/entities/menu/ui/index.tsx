@@ -1,7 +1,9 @@
 import cx from 'clsx';
+import { useUnit } from 'effector-react';
 import {
-  FC, useCallback, useEffect, useState,
+  FC, useEffect, useState,
 } from 'react';
+import { menuApi } from 'shared/api/menu';
 import { Burger } from 'shared/ui/burger';
 import { menuModel } from '..';
 import ItemsArray from './items-array';
@@ -13,20 +15,49 @@ menuModel.$selectedItem.watch(({ name }) => {
 });
 
 const Menu: FC = () => {
+  const [menu,
+    setSelectedItem,
+  ] = useUnit(
+    [
+      menuApi.$menu,
+      menuModel.setSelectedItem,
+    ],
+  );
   const [isOpenMenuConfirm, setIsOpenMenuConfirm] = useState<boolean>(false);
-  const [isScroll, setIsScroll] = useState<boolean>(false);
-  const scrollFunc = useCallback(() => {
+  const [isPageScroll, setIsPageScroll] = useState<boolean>(false);
+  const changeIsPageScroll = () => {
     if (window.scrollY > 60) {
-      setIsScroll(true);
+      setIsPageScroll(true);
     } else {
-      setIsScroll(false);
+      setIsPageScroll(false);
     }
-  }, []);
+  };
+  let timer: any = null;
+  const setWhereUserLocated = () => {
+    if (timer !== null) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout(() => {
+      for (const item of menu) {
+        const elemPositionY = Math.round(
+          document.getElementById(item.name)?.getBoundingClientRect().top ?? 0,
+        );
+        if (elemPositionY > -300 && elemPositionY < 300) {
+          setSelectedItem(item);
+        }
+      }
+    }, 120);
+  };
+  const scrollPage = () => {
+    changeIsPageScroll();
+    setWhereUserLocated();
+  };
   console.log(3);
   useEffect(() => {
-    window.addEventListener('scroll', scrollFunc);
-    // return window.addEventListener('scroll', scrollFunc);
+    window.addEventListener('scroll', scrollPage);
+    return window.addEventListener('scroll', scrollPage);
   }, []);
+  const isFixedMenu = isPageScroll && !isOpenMenuConfirm;
   return (
     <>
       {/*
@@ -37,9 +68,9 @@ const Menu: FC = () => {
         what change placement of all elements on page,
         but scrollIntoView dont know about it
       */}
-      {(isScroll && !isOpenMenuConfirm) && <div style={{ height: '34px' }} />}
+      {isFixedMenu && <div style={{ height: '34px' }} />}
       {/* end */}
-      <div className={cx(styles.menu, (isScroll && !isOpenMenuConfirm) && styles['fixed-menu'])}>
+      <div className={cx(styles.menu, isFixedMenu && styles['fixed-menu'])}>
         <Burger onClick={setIsOpenMenuConfirm} />
         <ItemsArray />
         {isOpenMenuConfirm ? <OpenedMenu onClick={setIsOpenMenuConfirm} /> : null}

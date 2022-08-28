@@ -4,10 +4,10 @@ import { useUnit } from 'effector-react';
 import styles from './styles.module.scss';
 
 const Products = () => {
-  const products = useUnit(menuApi.$menu);
+  const menu = useUnit(menuApi.$menu);
   return (
     <>
-      { products.map((item) => (
+      { menu.map((item) => (
         <div>
           <div className={styles.name} id={item.name}>{item.name}</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
