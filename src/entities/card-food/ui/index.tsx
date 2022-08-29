@@ -8,7 +8,7 @@ import styles from './styles.module.scss';
 
 const CardFood: FC<selectedFoodModel.ItemOfProductsKeys> = (item) => {
   const {
-    id, image, name, weight, price,
+    id, image, name, weight, price, hasIngredients,
   } = item;
   const {
     $selectedFood, $counter, setSelectedFood, DEFAULT_SELECTED_FOOD, setCounter,
@@ -23,13 +23,19 @@ const CardFood: FC<selectedFoodModel.ItemOfProductsKeys> = (item) => {
     rightBtn: () => setCounter(counter + 1),
   };
   const navigate = useNavigate();
-  const handleClick = () => {
+  const selectItemAndNavigate = () => {
     setSelectedFood(item);
     navigate('/food-detail');
   };
+  const selectItemAndNavigateWithIf = () => {
+    setSelectedFood(item);
+    if (hasIngredients) {
+      navigate('/food-detail');
+    }
+  };
   return (
     <div className={cx(styles['card-food'], isClickedOnPrice && styles['border-bottom'])}>
-      <div onClick={handleClick}>
+      <div onClick={selectItemAndNavigate}>
         <img src={image} alt={`name: ${name} ,price: ${price}`} />
         <div className={styles.name}>{name}</div>
       </div>
@@ -45,10 +51,8 @@ const CardFood: FC<selectedFoodModel.ItemOfProductsKeys> = (item) => {
       </div>
       {
         isClickedOnPrice
-          ? (
-            <Counter {...counterProps} />
-          )
-          : <div className={styles.price} onClick={() => setSelectedFood(item)}>{`${price} ₽`}</div>
+          ? <Counter {...counterProps} />
+          : <div className={styles.price} onClick={selectItemAndNavigateWithIf}>{`${price} ₽`}</div>
       }
     </div>
   );

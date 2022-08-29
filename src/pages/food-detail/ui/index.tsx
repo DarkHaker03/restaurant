@@ -11,7 +11,7 @@ const FoodDetail: FC = () => {
   const { $selectedFood, $counter, setCounter } = selectedFoodModel;
   const [
     {
-      image, name, description, hasIngredients, price,
+      image, name, description, hasIngredients, price, weight,
     }, counter,
   ] = useUnit([$selectedFood, $counter]);
   const { setLink, setText, setIsOpen } = lowerBarModel;
@@ -35,7 +35,14 @@ const FoodDetail: FC = () => {
     <div>
       <img style={{ width: '100%' }} src={image} alt="1" />
       <div className={styles.name}>{name}</div>
-      <div className={styles.description}>{description}</div>
+      <div className={styles.description}>
+        <span>
+          {weight}
+          г
+          <span style={{ margin: '0 5px 0 2px' }}> ·</span>
+        </span>
+        {description}
+      </div>
       <div className={styles.h4}> Выберите количество</div>
       <Counter {...counterProps} />
       {hasIngredients
