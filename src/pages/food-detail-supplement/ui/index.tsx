@@ -1,18 +1,17 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
+import { useLowerbar } from 'shared/hooks';
 import { INGREDIEENTS } from 'shared/api/ingridients/model';
-import { lowerBarModel } from 'widgets/lower-bar';
-import styles from './styles.module.scss';
 import ActiveItem from './active-item';
+import styles from './styles.module.scss';
 
 const FoodDetailSupplement: FC = () => {
-  const { setLink, setText, setIsOpen } = lowerBarModel;
   const [active, setActive] = useState(INGREDIEENTS[0]);
   const [activeItems, setActiveItems] = useState<string[]>([]);
-  useEffect(() => {
-    setIsOpen(true);
-    setLink('/food-detail');
-    setText('Готово');
-  }, []);
+
+  const link: string = '/food-detail';
+  const text: string = 'Готово';
+  useLowerbar.withoutWacth(link, text);
+
   return (
     <>
       <div className={styles['scroll-bar']}>

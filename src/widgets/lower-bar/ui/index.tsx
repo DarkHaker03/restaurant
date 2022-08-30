@@ -6,13 +6,13 @@ import styles from './styles.module.scss';
 
 const LowerBar: FC = () => {
   const {
-    $text, $link, $isOpen, clicked,
+    $text, $link, $isOpen,
   } = lowerBarModel;
   const [text, link, isOpen] = useUnit([$text, $link, $isOpen]);
   if (isOpen) {
     return (
       <div className={styles['lower-bar']}>
-        <Link className={styles.btn} to={link} onClick={() => clicked()}>
+        <Link className={styles.btn} to={link}>
           {text}
         </Link>
         <span className={styles['lower-bar-line']} />

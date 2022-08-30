@@ -1,38 +1,59 @@
-import { FC } from 'react';
-import { useUnit } from 'effector-react';
+import React, { FC } from 'react';
 import { selectedFoodModel } from 'process/selected-food';
+import { mainModel } from 'pages/main';
 import { useNavigate } from 'react-router';
 import { Counter } from 'shared/ui/counter';
 import cx from 'clsx';
 import styles from './styles.module.scss';
 
-const CardFood: FC<selectedFoodModel.ItemOfProductsKeys> = (item) => {
+const CardFood: FC<mainModel.ExpantionOfProductsKeys> = React.memo((item) => {
   const {
-    id, image, name, weight, price, hasIngredients,
+    id,
+    counter,
+    image,
+    name,
+    weight,
+    price,
+    hasIngredients,
+    selected,
   } = item;
   const {
-    $selectedFood, $counter, setSelectedFood, DEFAULT_SELECTED_FOOD, setCounter,
+    addItemInSelectedMenu,
+    setCounter,
+    deteleItemInSelectedMenu,
+    setSelectedFood,
   } = selectedFoodModel;
-  const [selectedFood, counter] = useUnit([$selectedFood, $counter]);
-  const isClickedOnPrice = selectedFood.id === id;
+
+  const isClickedOnPrice = selected;
+
   const counterProps = {
-    leftBtn: () => (
-      counter !== 1 ? setCounter(counter - 1) : setSelectedFood(DEFAULT_SELECTED_FOOD)
-    ),
+    leftBtn: () => {
+      if (counter !== 1) {
+        setCounter({ id, counter: counter - 1 });
+      } else {
+        deteleItemInSelectedMenu(id);
+      }
+    },
     counter,
-    rightBtn: () => setCounter(counter + 1),
+    rightBtn: () => {
+      setCounter({ id, counter: counter + 1 });
+    },
   };
+
   const navigate = useNavigate();
   const selectItemAndNavigate = () => {
     setSelectedFood(item);
     navigate('/food-detail');
   };
   const selectItemAndNavigateWithIf = () => {
-    setSelectedFood(item);
     if (hasIngredients) {
+      setSelectedFood(item);
       navigate('/food-detail');
+    } else {
+      addItemInSelectedMenu(item);
     }
   };
+
   return (
     <div className={cx(styles['card-food'], isClickedOnPrice && styles['border-bottom'])}>
       <div onClick={selectItemAndNavigate}>
@@ -56,6 +77,6 @@ const CardFood: FC<selectedFoodModel.ItemOfProductsKeys> = (item) => {
       }
     </div>
   );
-};
+});
 
 export default CardFood;

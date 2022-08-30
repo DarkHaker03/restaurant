@@ -1,10 +1,10 @@
 import { CardFood } from 'entities/card-food';
-import { menuApi } from 'shared/api/menu';
 import { useUnit } from 'effector-react';
+import { mainModel } from 'pages/main';
 import styles from './styles.module.scss';
 
 const Products = () => {
-  const menu = useUnit(menuApi.$menu);
+  const menu = useUnit(mainModel.$menu);
   return (
     <>
       { menu.map((item) => (

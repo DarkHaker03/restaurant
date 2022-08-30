@@ -1,17 +1,22 @@
-import { lowerBarModel } from 'widgets/lower-bar';
+import { useUnit } from 'effector-react';
 import { Menu } from 'entities/menu';
 import { selectedFoodModel } from 'process/selected-food';
 import { FC, useEffect } from 'react';
+import { useLowerbar } from 'shared/hooks';
 import Products from './products';
 
 const Main: FC = () => {
-  const { setLink, setText, setIsOpen } = lowerBarModel;
+  const sumPrice = useUnit(selectedFoodModel.$sumPrice);
   useEffect(() => {
-    selectedFoodModel.setSelectedFood(selectedFoodModel.DEFAULT_SELECTED_FOOD);
-    setIsOpen(false);
-    setLink('/food-detail');
-    setText('Перейти к оформлению заказа');
-  }, []);
+    if (sumPrice !== 0) {
+      const link: string = '/basket';
+      const text: string = `Заказать ${sumPrice}₽`;
+      const isOpen: boolean = true;
+      useLowerbar.base(link, text, isOpen);
+    } else {
+      useLowerbar.close();
+    }
+  }, [sumPrice]);
   return (
     <>
       <Menu />
@@ -19,5 +24,4 @@ const Main: FC = () => {
     </>
   );
 };
-
 export default Main;
