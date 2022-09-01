@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/restaurant/static/css/main.3e7c9886.css",
-    "main.js": "/restaurant/static/js/main.c69a0d49.js",
+    "main.css": "/restaurant/static/css/main.08b8c962.css",
+    "main.js": "/restaurant/static/js/main.ec24524d.js",
     "static/js/787.ec704a7a.chunk.js": "/restaurant/static/js/787.ec704a7a.chunk.js",
     "static/media/Roboto-Medium.woff2": "/restaurant/static/media/Roboto-Medium.fc0337b9cf1cce2e6e1e.woff2",
     "static/media/Roboto-Bold.woff2": "/restaurant/static/media/Roboto-Bold.6cd35edfbc0d7a417131.woff2",
@@ -9,12 +9,12 @@
     "static/media/basket.svg": "/restaurant/static/media/basket.45b1de8dbcb63446d0492fd73b811196.svg",
     "static/media/check.svg": "/restaurant/static/media/check.497a7ff4c7c41119f5a161a1e8cc0b17.svg",
     "index.html": "/restaurant/index.html",
-    "main.3e7c9886.css.map": "/restaurant/static/css/main.3e7c9886.css.map",
-    "main.c69a0d49.js.map": "/restaurant/static/js/main.c69a0d49.js.map",
+    "main.08b8c962.css.map": "/restaurant/static/css/main.08b8c962.css.map",
+    "main.ec24524d.js.map": "/restaurant/static/js/main.ec24524d.js.map",
     "787.ec704a7a.chunk.js.map": "/restaurant/static/js/787.ec704a7a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3e7c9886.css",
-    "static/js/main.c69a0d49.js"
+    "static/css/main.08b8c962.css",
+    "static/js/main.ec24524d.js"
   ]
 }
