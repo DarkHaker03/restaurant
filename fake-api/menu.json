@@ -38,24 +38,6 @@
         "name": "\u0428\u0430\u0443\u0440\u043c\u0430 \u041c\u0435\u0433\u0430",
         "price": 389,
         "weight": "700"
-      },
-      {
-        "id": "345359102",
-        "description": null,
-        "image": null,
-        "hasIngredients": false,
-        "name": "\u041a\u0430\u0440\u0442\u043e\u0444\u0435\u043b\u044c \u0444\u0440\u0438",
-        "price": 125,
-        "weight": null
-      },
-      {
-        "id": "345359136",
-        "description": null,
-        "image": null,
-        "hasIngredients": false,
-        "name": "\u041a\u0430\u0440\u0442\u043e\u0444\u0435\u043b\u044c \u043f\u043e-\u0434\u0435\u0440\u0435\u0432\u0435\u043d\u0441\u043a\u0438",
-        "price": 135,
-        "weight": null
       }
     ]
   },
