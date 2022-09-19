@@ -1,0 +1,32 @@
+{
+	"id": "336108609",
+	"description": "\u041f\u0448\u0435\u043d\u0438\u0447\u043d\u0430\u044f \u0442\u043e\u0440\u0442\u0438\u043b\u044c\u044f, \u0442\u043e\u043c\u043b\u0435\u043d\u0430\u044f \u0433\u043e\u0432\u044f\u0434\u0438\u043d\u0430, \u043f\u043e\u043c\u0438\u0434\u043e\u0440, \u043b\u0443\u043a \u043a\u0440\u0430\u0441\u043d\u044b\u0439, \u043a\u0438\u043d\u0437\u0430, \u043b\u0438\u043c\u043e\u043d, \u0441\u043f\u0435\u0446\u0438\u044f \u0441\u0443\u043c\u0430\u0445",
+	"image": "https:\/\/www.delivery-club.ru\/media\/cms\/relation_product\/50220\/322224489_m1000_c17253c1b11fd4c3bd86c2fe1cc57b657611fa5643ccb94be7b9d47619bc733c.jpg",
+	"hasIngredients": true,
+	"name": "\u0422\u0430\u043d\u0442\u0443\u043d\u0438",
+	"price": 389,
+	"weight": "400",
+	"ingredientGroups": [],
+	"ingredients": [
+		{
+			"id": "305577386",
+			"name": "\u043a\u0430\u0440\u0442\u043e\u0444\u0435\u043b\u044c \u0444\u0440\u0438",
+			"price": 30
+		},
+		{
+			"id": "304260426",
+			"name": "\u041f\u0435\u0440\u0435\u0446 \u0445\u0430\u043b\u0430\u043f\u0435\u043d\u044c\u043e\u2063",
+			"price": 40
+		},
+		{
+			"id": "305577385",
+			"name": "\u0413\u0440\u0438\u0431\u044b \u0448\u0430\u043c\u043f\u0438\u043d\u044c\u043e\u043d\u044b",
+			"price": 40
+		},
+		{
+			"id": "305577384",
+			"name": "\u0421\u044b\u0440",
+			"price": 40
+		}
+	]
+}
